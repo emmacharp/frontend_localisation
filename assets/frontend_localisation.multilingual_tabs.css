@@ -26,6 +26,10 @@
 	z-index: 10;
 }
 
+.field-multilingual ul.tabs.inverted-margin {
+	margin: 0 0 -2.6rem;
+}
+
 .field-multilingual ul.tabs li {
 	font-size: 1.1rem;
 	text-transform: uppercase;
