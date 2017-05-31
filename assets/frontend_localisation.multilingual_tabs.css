@@ -7,6 +7,10 @@
 	padding-right: 6rem;
 }
 
+.field-multilingual .tab-panel > label {
+	margin-bottom: 0!important;
+}
+
 .field-multilingual .tab-panel > label > input,
 .field-multilingual .tab-panel > label > .frame {
 	margin-top: 0;
