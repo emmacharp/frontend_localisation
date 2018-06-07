@@ -69,7 +69,7 @@
 					// ignore
 				}
 			}
-			
+
 			if (version_compare($previousVersion, '2.7.0', '<')) {
 				// This value is deprecated
 				Symphony::Configuration()->remove('ref_lang', 'frontend_localisation');
@@ -78,7 +78,7 @@
 					Symphony::Configuration()->set('main_reg', '', 'frontend_localisation');
 				}
 			}
-			
+
 			return Symphony::Configuration()->write();
 		}
 
@@ -294,6 +294,9 @@
 		 */
 		public function dSave(array $context) {
 			$valid = true;
+			if (!isset($context['settings']['frontend_localisation'])) {
+				return $valid;
+			}
 
 			$data   = & $context['settings']['frontend_localisation'];
 			$errors = array();
@@ -389,7 +392,7 @@
 			$languages_status = ExtensionManager::fetchStatus(array('handle' => 'languages'));
 			$languages_status = current($languages_status);
 
-			if ($languages_status != EXTENSION_ENABLED) {
+			if ($languages_status != Extension::EXTENSION_ENABLED) {
 				if ($return_status) {
 					return false;
 				}
