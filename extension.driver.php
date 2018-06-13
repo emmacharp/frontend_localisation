@@ -64,7 +64,11 @@
 				General::deleteDirectory(WORKSPACE . Symphony::Configuration()->get('translation_path', 'frontend_localisation'));
 
 				try {
-					Symphony::Database()->query("ALTER TABLE `tbl_pages` DROP `translations`");
+					Symphony::Database()
+						->alter('tbl_pages')
+						->drop('translations')
+						->execute()
+						->success();
 				} catch (Exception $e) {
 					// ignore
 				}
