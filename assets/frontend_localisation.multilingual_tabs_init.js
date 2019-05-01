@@ -1,4 +1,8 @@
+/**
+ * frontend_localisation tabs init
+ */
 (function ($, undefined) {
+	'use strict';
 
 	$(document).ready(function () {
 

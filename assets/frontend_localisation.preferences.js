@@ -1,4 +1,8 @@
+/**
+ * frontend_localisation preferences
+ */
 (function ($, undefined) {
+	'use strict';
 
 	$(document).ready(function () {
 

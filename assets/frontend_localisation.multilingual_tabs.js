@@ -1,4 +1,9 @@
+/**
+ * frontend_localisation tabs
+ */
 (function ($, undefined) {
+
+	'use strict';
 
 	var collection = {
 		$m_fields: $(),
