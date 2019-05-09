@@ -2,59 +2,38 @@
 	position: relative;
 }
 
-.field-multilingual div.container > label {
+.field-multilingual div.container > label:not(.file) {
 	margin-bottom: 1rem!important;
-	padding-right: 6rem;
-}
-
-.field-multilingual .tab-panel > label {
-	margin-bottom: 0!important;
-}
-
-.field-multilingual .tab-panel > label > input,
-.field-multilingual .tab-panel > label > .frame {
-	margin-top: 0;
 }
 
 /*--------------------------------------------*/
 /* !Tabs */
 /*--------------------------------------------*/
 
-.field-multilingual ul.tabs {
+#contents-actions ul.tabs {
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
 	justify-content: flex-end;
-	position: relative;
-	margin-top: -2.5rem;
-	margin-bottom: -2px;
-	padding-right: 10px;
-	box-sizing: border-box;
 }
 
-.field-multilingual ul.tabs li {
+#contents-actions ul.tabs li {
 	font-size: var(--text-smaller);
 	color: var(--color-main-light);
 	text-transform: uppercase;
-	line-height: 1.4em;
-	margin: 0 0 0 1rem;
-	padding: 0 0 1rem;
-	border: none;
-	border-bottom: 2px solid transparent;
+	line-height: 1em;
 	cursor: pointer;
 }
 
-.field-multilingual ul.tabs li:hover {
+#contents-actions ul.tabs li:hover {
 	color: var(--color-accent);
-	border-color: var(--color-accent);
 }
 
-.field-multilingual ul.tabs li.active {
+#contents-actions ul.tabs li.active {
 	color: var(--color-main);
-	border-color: var(--color-main);
 }
 
-.field-multilingual .tab-panel input[type="file"] {
+#contents-actions .tab-panel input[type="file"] {
 	margin-top: 0;
 }
 

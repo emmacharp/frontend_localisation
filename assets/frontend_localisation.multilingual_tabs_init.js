@@ -7,12 +7,19 @@
 	$(document).ready(function () {
 
 		// wherever this is called
-		$(this).find('.field-multilingual').symphonyMultilingualTabs();
+		var multi = $(this).find('.field-multilingual').symphonyMultilingualTabs();
 
 		// for duplicator. Useful for fields that use Multilingual Tabs on /blueprints/sections/edit
 		$(this).on('constructshow.duplicator', function () {
 			$(this).find('.field-multilingual').symphonyMultilingualTabs();
 		});
+
+		if (!!multi.length) {
+			var ctn = window.Symphony.Elements.contents.find('#contents-actions');
+			var btns = window.Symphony.Elements.contents.find('ul.tabs').first().clone();
+			ctn.prepend(btns);
+			btns.show();
+		}
 
 	});
 
