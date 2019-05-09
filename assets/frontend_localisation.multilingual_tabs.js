@@ -51,7 +51,8 @@
 				var lang_code = $(this).data('lang_code');
 
 				collection.$m_tabs.removeClass('active').filter('.' + lang_code).addClass('active');
-				collection.$m_panels.hide().filter('.tab-' + lang_code).show();
+				collection.$m_panels.hide().filter('.tab-' + lang_code).show().trigger('visible.tab');
+
 			});
 
 			// trigger current tab
