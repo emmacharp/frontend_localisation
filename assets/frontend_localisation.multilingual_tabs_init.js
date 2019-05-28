@@ -16,7 +16,7 @@
 
 		if (!!multi.length) {
 			var ctn = window.Symphony.Elements.contents.find('#contents-actions');
-			var btns = window.Symphony.Elements.contents.find('ul.tabs').first().clone();
+			var btns = window.Symphony.Elements.contents.find('.field ul.tabs').first().clone();
 			ctn.prepend(btns);
 			btns.show();
 		}
