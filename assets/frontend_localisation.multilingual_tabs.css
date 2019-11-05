@@ -1,42 +1,125 @@
-.field-multilingual div.container {
-	position: relative;
-}
-
-.field-multilingual div.container > label:not(.file) {
-	margin-bottom: 1rem!important;
-}
-
 /*--------------------------------------------*/
 /* !Tabs */
 /*--------------------------------------------*/
 
-#contents-actions ul.tabs {
+/* Common base for tab variants */
+.field ul.tabs,
+[id="context"] ul.tabs {
+	position: absolute;
+	max-width: 100%;
+	left: -1px;
 	display: flex;
-	flex-direction: row;
-	align-items: baseline;
-	justify-content: flex-end;
-	margin-bottom: 0;
 }
 
-#contents-actions ul.tabs li {
-	font-size: var(--text-smaller);
-	color: var(--color-main-light);
-	text-transform: uppercase;
-	line-height: 1em;
+.field ul.tabs>li,
+[id="context"] ul.tabs>li {
+	position: relative;
+	border: 1px solid var(--color-ui);
+	line-height: 1.1em;
 	cursor: pointer;
-	margin-right: 2rem;
+	padding: 0 var(--spacing-nano);
 }
 
-#contents-actions ul.tabs li:hover {
+.field ul.tabs>li+li,
+[id="context"] ul.tabs>li+li {
+	margin-left: -2px;
+}
+
+.field:not(:hover) ul.tabs>li:not(.active),
+[id="context"]:not(:hover) ul.tabs>li:not(.active) {
+	color: var(--color-main-light);
+}
+
+.field ul.tabs>li:hover,
+[id="context"] ul.tabs>li:hover {
 	color: var(--color-accent);
 }
 
-#contents-actions ul.tabs li.active {
+.field ul.tabs>li.active,
+[id="context"] ul.tabs>li.active {
 	color: var(--color-main);
 }
 
-#contents-actions .tab-panel input[type="file"] {
-	margin-top: 0;
+.field ul.tabs>li.active,
+[id="context"] ul.tabs>li.active {
+	z-index: 1;
+}
+
+.field ul.tabs>li:not(.active),
+[id="context"] ul.tabs>li:not(.active) {
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 100%);
+}
+
+/* Tab instances in fields */
+.field ul.tabs {
+	bottom: calc(100% + 1px);
+	margin: 0;
+	margin-left: var(--standard-inner-rhythm);
+	background-color: inherit;
+}
+
+.field ul.tabs>li {
+	top: 1px;
+	padding-top: var(--spacing-pico);
+	background-color: inherit;
+	box-shadow: var(--shadow-up-smaller);
+	font-size: var(--text-smaller);
+	border-radius: var(--radius-small) var(--radius-small) 0 0;
+}
+
+.field ul.tabs>li.active {
+	border-bottom-color: transparent;
+}
+
+/* Master tabs in context container */
+[id="context"] ul.tabs {
+	min-width: calc((100% - var(--dimension-smallest)) / 2);
+	box-sizing: border-box;
+	padding-left: var(--standard-container-rhythm);
+	padding-right: var(--standard-container-rhythm);
+	top: 100%;
+	align-items: flex-start;
+	justify-content: flex-end;
+	z-index: 1;
+}
+
+[id="context"] ul.tabs>li {
+	font-size: var(--text-small);
+	background-color: var(--backframe-background-color);
+	box-shadow: var(--box-shadow-smaller);
+	padding-bottom: var(--spacing-pico);
+	border-radius: 0 0 var(--radius-small) var(--radius-small);
+}
+
+[id="context"] ul.tabs>li:not(.active) {
+	top: 1px;
+}
+
+[id="context"] ul.tabs>li.active {
+	border-top-color: transparent;
+	padding-left: var(--spacing-micro);
+	padding-right: var(--spacing-micro);
+	padding-bottom: var(--spacing-nano);
+	padding-top: 1px;
+}
+
+/* Master Tab Pseudo-label */
+html:lang(en) [id="context"] ul.tabs:before {
+	content: "Languages:";
+}
+
+html:lang(fr) [id="context"] ul.tabs:before {
+	content: "Langues :";
+}
+
+[id="context"] ul.tabs:before {
+	margin-right: var(--spacing-micro);
+	font-size: var(--text-smallest);
+}
+
+[id="context"]:not(:hover) ul.tabs:before {
+	opacity: 0;
+	transition: opacity 4000ms linear 2000ms;
 }
 
 /*--------------------------------------------*/
