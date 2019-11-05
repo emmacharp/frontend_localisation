@@ -18,7 +18,7 @@
 			var $this = $(this);
 
 			// safe checks
-			var $m_ul = $this.find('ul.tabs').hide();
+			var $m_ul = $this.find('ul.tabs');
 			if ($m_ul.length === 0) return $this;
 
 			var $m_tabs = $m_ul.find('li');
