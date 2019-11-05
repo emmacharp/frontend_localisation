@@ -15,7 +15,7 @@
 		});
 
 		if (!!multi.length) {
-			var ctn = window.Symphony.Elements.contents.find('#contents-actions');
+			var ctn = window.Symphony.Elements.context;
 			var btns = window.Symphony.Elements.contents.find('.field ul.tabs').first().clone();
 			ctn.prepend(btns);
 			btns.show();
