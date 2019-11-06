@@ -75,8 +75,8 @@
 [id="context"] ul.tabs {
 	min-width: calc((100% - var(--dimension-smallest)) / 2);
 	box-sizing: border-box;
-	padding-left: var(--standard-container-rhythm);
-	padding-right: var(--standard-container-rhythm);
+	padding-left: var(--standard-outer-rhythm);
+	padding-right: var(--standard-outer-rhythm);
 	top: 100%;
 	align-items: flex-start;
 	justify-content: flex-end;
@@ -86,7 +86,6 @@
 [id="context"] ul.tabs>li {
 	font-size: var(--text-small);
 	background-color: var(--backframe-background-color);
-	box-shadow: var(--box-shadow-smaller);
 	padding-bottom: var(--spacing-pico);
 	border-radius: 0 0 var(--radius-small) var(--radius-small);
 }
@@ -100,6 +99,7 @@
 	padding-left: var(--spacing-micro);
 	padding-right: var(--spacing-micro);
 	padding-bottom: var(--spacing-nano);
+	box-shadow: var(--shadow-smaller);
 	padding-top: 1px;
 }
 
