@@ -18,7 +18,7 @@
 			var $this = $(this);
 
 			// safe checks
-			var $m_ul = $this.find('ul.tabs');
+			var $m_ul = $this.find('ul.tabs.multilingualtabs');
 			if ($m_ul.length === 0) return $this;
 
 			var $m_tabs = $m_ul.find('li');
@@ -47,10 +47,10 @@
 			collection.$m_panels = collection.$m_panels.add($m_panels);
 
 			// bind events
-			$(document).on('click', 'ul.tabs li', function () {
+			$(document).on('click', 'ul.tabs.multilingualtabs li', function () {
 				var lang_code = $(this).attr('data-lang');
 
-				$('ul.tabs li').removeClass('active').filter('.' + lang_code).addClass('active');
+				$('ul.tabs.multilingualtabs li').removeClass('active').filter('.' + lang_code).addClass('active');
 				collection.$m_panels.hide().filter('.tab-' + lang_code).show().trigger('visible.tab');
 
 			});

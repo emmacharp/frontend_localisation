@@ -6,7 +6,6 @@
 .field ul.tabs,
 [id="context"] ul.tabs {
 	position: absolute;
-	max-width: 100%;
 	left: -1px;
 	display: flex;
 }
@@ -47,7 +46,7 @@
 
 .field ul.tabs>li:not(.active),
 [id="context"] ul.tabs>li:not(.active) {
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 100%);
+	background-image: var(--veil);
 }
 
 /* Tab instances in fields */
@@ -73,14 +72,17 @@
 
 /* Master tabs in context container */
 [id="context"] ul.tabs {
-	min-width: calc((100% - var(--dimension-smallest)) / 2);
 	box-sizing: border-box;
-	padding-left: var(--standard-outer-rhythm);
-	padding-right: var(--standard-outer-rhythm);
 	top: 100%;
 	align-items: flex-start;
+	z-index: 2;
+}
+
+[id="context"] ul.multilingualtabs {
+	min-width: calc((100% - var(--dimension-smallest)) / 2);
 	justify-content: flex-end;
-	z-index: 1;
+	padding-left: var(--standard-outer-rhythm);
+	padding-right: var(--standard-outer-rhythm);
 }
 
 [id="context"] ul.tabs>li {
@@ -104,20 +106,20 @@
 }
 
 /* Master Tab Pseudo-label */
-html:lang(en) [id="context"] ul.tabs:before {
+html:lang(en) [id="context"] ul.multilingualtabs:before {
 	content: "Languages:";
 }
 
-html:lang(fr) [id="context"] ul.tabs:before {
+html:lang(fr) [id="context"] ul.multilingualtabs:before {
 	content: "Langues :";
 }
 
-[id="context"] ul.tabs:before {
+[id="context"] ul.multilingualtabs:before {
 	margin-right: var(--spacing-micro);
 	font-size: var(--text-smallest);
 }
 
-[id="context"]:not(:hover) ul.tabs:before {
+[id="context"]:not(:hover) ul.multilingualtabs:before {
 	opacity: 0;
 	transition: opacity 4000ms linear 2000ms;
 }
