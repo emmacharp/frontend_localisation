@@ -29,7 +29,7 @@
 
 			// add language information
 			$m_tabs.each(function () {
-				$(this).attr('data-lang', $(this).attr('class'));
+				$(this).attr('data-lang', $(this).attr('class').split(' ')[0]);
 			});
 
 			// current tab which will be clicked
