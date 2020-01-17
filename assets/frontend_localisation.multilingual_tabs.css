@@ -3,14 +3,19 @@
 /*--------------------------------------------*/
 
 /* Common base for tab variants */
-.field ul.tabs,
+ul.tabs.multilingualtabs,
+[id="context"] ul.tabs {
+	display: flex;
+	margin-bottom: var(--standard-inner-rhythm);
+}
+
+.field ul.tabs.multilingualtabs,
 [id="context"] ul.tabs {
 	position: absolute;
 	left: -1px;
-	display: flex;
 }
 
-.field ul.tabs>li,
+ul.tabs.multilingualtabs>li,
 [id="context"] ul.tabs>li {
 	position: relative;
 	border: 1px solid var(--color-ui);
@@ -19,7 +24,7 @@
 	padding: 0 var(--spacing-nano);
 }
 
-.field ul.tabs>li+li,
+ul.tabs.multilingualtabs>li+li,
 [id="context"] ul.tabs>li+li {
 	margin-left: -2px;
 }
@@ -29,35 +34,35 @@
 	color: var(--color-main-light);
 }
 
-.field ul.tabs>li:hover,
+ul.tabs.multilingualtabs>li:hover,
 [id="context"] ul.tabs>li:hover {
 	color: var(--color-accent);
 }
 
-.field ul.tabs>li.active,
+ul.tabs.multilingualtabs>li.active,
 [id="context"] ul.tabs>li.active {
 	color: var(--color-main);
 }
 
-.field ul.tabs>li.active,
+ul.tabs.multilingualtabs>li.active,
 [id="context"] ul.tabs>li.active {
 	z-index: 1;
 }
 
-.field ul.tabs>li:not(.active),
+ul.tabs.multilingualtabs>li:not(.active),
 [id="context"] ul.tabs>li:not(.active) {
 	background-image: var(--veil);
 }
 
 /* Tab instances in fields */
-.field ul.tabs {
+.field ul.tabs.multilingualtabs {
 	bottom: calc(100% + 1px);
 	margin: 0;
 	margin-left: var(--standard-inner-rhythm);
 	background-color: inherit;
 }
 
-.field ul.tabs>li {
+ul.tabs.multilingualtabs>li {
 	top: 1px;
 	padding-top: var(--spacing-pico);
 	background-color: inherit;
@@ -66,7 +71,7 @@
 	border-radius: var(--radius-small) var(--radius-small) 0 0;
 }
 
-.field ul.tabs>li.active {
+ul.tabs.multilingualtabs>li.active {
 	border-bottom-color: transparent;
 }
 
@@ -140,4 +145,13 @@ html:lang(fr) [id="context"] ul.multilingualtabs:before {
 .field-multilingual div.tab-edit fieldset input.text {
 	width: 100px;
 	margin-right: 5px;
+}
+
+/* Enable absolute positioning context (for loading purposes, for example) --------*/
+.field-multilingual .tab-panel {
+	position: relative;
+}
+
+html:not(.js-active) .field-multilingual .tab-panel~.tab-panel {
+	display: none;
 }
