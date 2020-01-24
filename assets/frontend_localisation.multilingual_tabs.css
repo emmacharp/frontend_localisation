@@ -71,6 +71,10 @@ ul.tabs.multilingualtabs>li {
 	border-radius: var(--radius-small) var(--radius-small) 0 0;
 }
 
+.field:not(:hover) ul.tabs.multilingualtabs {
+	opacity: 0;
+}
+
 ul.tabs.multilingualtabs>li.active {
 	border-bottom-color: transparent;
 }
