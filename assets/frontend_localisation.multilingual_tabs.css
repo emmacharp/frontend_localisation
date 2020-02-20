@@ -2,118 +2,6 @@
 /* !Tabs */
 /*--------------------------------------------*/
 
-/* Common base for tab variants */
-ul.tabs.multilingualtabs,
-[id="context"] ul.tabs {
-	display: flex;
-	margin-bottom: var(--standard-inner-rhythm);
-}
-
-.field ul.tabs.multilingualtabs,
-[id="context"] ul.tabs {
-	position: absolute;
-	left: -1px;
-}
-
-ul.tabs.multilingualtabs>li,
-[id="context"] ul.tabs>li {
-	position: relative;
-	border: 1px solid var(--color-ui);
-	line-height: 1.1em;
-	cursor: pointer;
-	padding: 0 var(--spacing-nano);
-}
-
-ul.tabs.multilingualtabs>li+li,
-[id="context"] ul.tabs>li+li {
-	margin-left: -2px;
-}
-
-.field:not(:hover) ul.tabs>li:not(.active),
-[id="context"]:not(:hover) ul.tabs>li:not(.active) {
-	color: var(--color-main-light);
-}
-
-ul.tabs.multilingualtabs>li:hover,
-[id="context"] ul.tabs>li:hover {
-	color: var(--color-accent);
-}
-
-ul.tabs.multilingualtabs>li.active,
-[id="context"] ul.tabs>li.active {
-	color: var(--color-main);
-}
-
-ul.tabs.multilingualtabs>li.active,
-[id="context"] ul.tabs>li.active {
-	z-index: 1;
-}
-
-ul.tabs.multilingualtabs>li:not(.active),
-[id="context"] ul.tabs>li:not(.active) {
-	background-image: var(--veil);
-}
-
-/* Tab instances in fields */
-.field ul.tabs.multilingualtabs {
-	bottom: calc(100% + 1px);
-	margin: 0;
-	margin-left: var(--standard-inner-rhythm);
-	background-color: inherit;
-}
-
-ul.tabs.multilingualtabs>li {
-	top: 1px;
-	padding-top: var(--spacing-pico);
-	background-color: inherit;
-	box-shadow: var(--shadow-up-smaller);
-	font-size: var(--text-smaller);
-	border-radius: var(--radius-small) var(--radius-small) 0 0;
-}
-
-.field:not(:hover) ul.tabs.multilingualtabs {
-	opacity: 0;
-}
-
-ul.tabs.multilingualtabs>li.active {
-	border-bottom-color: transparent;
-}
-
-/* Master tabs in context container */
-[id="context"] ul.tabs {
-	box-sizing: border-box;
-	top: 100%;
-	align-items: flex-start;
-	z-index: 2;
-}
-
-[id="context"] ul.multilingualtabs {
-	min-width: calc((100% - var(--dimension-smallest)) / 2);
-	justify-content: flex-end;
-	padding-left: var(--standard-outer-rhythm);
-	padding-right: var(--standard-outer-rhythm);
-}
-
-[id="context"] ul.tabs>li {
-	font-size: var(--text-small);
-	background-color: var(--backframe-background-color);
-	padding-bottom: var(--spacing-pico);
-	border-radius: 0 0 var(--radius-small) var(--radius-small);
-}
-
-[id="context"] ul.tabs>li:not(.active) {
-	top: 1px;
-}
-
-[id="context"] ul.tabs>li.active {
-	border-top-color: transparent;
-	padding-left: var(--spacing-micro);
-	padding-right: var(--spacing-micro);
-	padding-bottom: var(--spacing-nano);
-	box-shadow: var(--shadow-smaller);
-	padding-top: 1px;
-}
-
 /* Master Tab Pseudo-label */
 html:lang(en) [id="context"] ul.multilingualtabs:before {
 	content: "Languages:";
@@ -156,6 +44,7 @@ html:lang(fr) [id="context"] ul.multilingualtabs:before {
 	position: relative;
 }
 
-html:not(.js-active) .field-multilingual .tab-panel~.tab-panel {
+html:not(.js-active) .field-multilingual .tab-panel~.tab-panel,
+.field-multilingual .tab-panel:not([style*="display:none;"])+.tab-panel {
 	display: none;
 }
