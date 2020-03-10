@@ -21,6 +21,11 @@ html:lang(fr) [id="context"] ul.multilingualtabs:before {
 	transition: opacity 4000ms linear 2000ms;
 }
 
+.field-multilingual .tab-panel {
+	background-color: inherit;
+	border-radius: inherit;
+}
+
 /*--------------------------------------------*/
 /* !Tab Edit */
 /*--------------------------------------------*/
