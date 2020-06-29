@@ -51,7 +51,8 @@ html:lang(fr) [id="context"] ul.multilingualtabs:before {
 
 /* Prevent interface jank on loading and hide inactive fields while keeping them accessible to JS (no display:none) */
 html:not(.js-active) .field-multilingual .tab-panel~.tab-panel,
-.field-multilingual .tab-panel:not([style*="display: none;"]):not([style*="display:none;"])+.tab-panel {
+.field-multilingual .tab-panel.tab-en:not([style*="display: none;"]):not([style*="display:none;"])~.tab-panel:not(.tab-en),
+.field-multilingual .tab-panel.tab-fr:not([style*="display: none;"]):not([style*="display:none;"])~.tab-panel:not(.tab-fr) {
 	overflow: hidden;
 	height: 0;
 	position: absolute;
